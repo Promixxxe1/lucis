@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { LuArrowRight, LuCamera, LuFacebook, LuInstagram, LuLinkedin, LuMail, LuMessageCircle, LuTwitter } from "react-icons/lu";
-import MyVideo from "../assets/check.mp4";
 
 const Footer = () => {
-  const images = [MyVideo];
+  const images = ["/src/assets/check.mp4"];
 
   const [fade, setFade] = useState(true);
 
