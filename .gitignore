@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Temporary and downloaded files
+*.html
+!index.html
+Untitled*.jsx
+Untitled*.html
