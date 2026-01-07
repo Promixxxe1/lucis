@@ -37,7 +37,6 @@ const Footer = () => {
             loop
             muted
             playsInline
-            controls
             className="w-full h-full object-cover"
           ></video>
           {/* Dark Overlay */}
