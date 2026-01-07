@@ -10,8 +10,7 @@ import {
 } from "react-icons/lu";
 
 const Footer = () => {
-  const images = ["/src/assets/check.mp4"];
-
+  const images = ["/check.mp4"];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
