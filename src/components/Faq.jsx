@@ -1,53 +1,49 @@
-import React, {useState} from 'react';
-import { LucideCircleQuestionMark } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { LucideCircleQuestionMark } from "lucide-react";
 
 const Faq = () => {
+  const services = [
+    {
+      id: "btn1",
+      title: "Getting Started",
+      heading: "How do I find and book a photographer?",
 
-const services = [
-  {
-    id: "btn1",
-    title: "Getting Started",
-    heading: "How do I find and book a photographer?",
+      paragraph:
+        "Browse our curated network of photographers, view their portfolios, check availability, and book directly through our platform. You can filter by location, style, and service type.",
+    },
+    {
+      id: "btn2",
+      title: "Pricing",
+      heading: "How much does it cost to book a photographer?",
 
-    paragraph:
-      "Browse our curated network of photographers, view their portfolios, check availability, and book directly through our platform. You can filter by location, style, and service type.",
-  },
-  {
-    id: "btn2",
-    title: "Pricing",
-    heading: "How much does it cost to book a photographer?",
+      paragraph:
+        "Pricing varies by photographer and service type. Wedding photography ranges from $2,500-$5,000+, while portraits start at $350. Each photographer sets their own rates.",
+    },
+    {
+      id: "btn3",
+      title: "Safety",
+      heading: "How do you verify photographers?",
 
-    paragraph:
-      "Pricing varies by photographer and service type. Wedding photography ranges from $2,500-$5,000+, while portraits start at $350. Each photographer sets their own rates.",
-  },
-  {
-    id: "btn3",
-    title: "Safety",
-    heading: "How do you verify photographers?",
+      paragraph:
+        "All photographers undergo background checks, portfolio review, and client verification. We maintain a 4.9+ rating system to ensure quality.",
+    },
+    {
+      id: "btn4",
+      title: "Timelines",
+      heading: "How long does it take to get my photos?",
 
-    paragraph:
-      "All photographers undergo background checks, portfolio review, and client verification. We maintain a 4.9+ rating system to ensure quality.",
-  },
-  {
-    id: "btn4",
-    title: "Timelines",
-    heading: "How long does it take to get my photos?",
-
-    paragraph:
-      "Most photographers deliver edited photos within 2-4 weeks. Rush delivery options are available for an additional fee.",
-  },
-];
+      paragraph:
+        "Most photographers deliver edited photos within 2-4 weeks. Rush delivery options are available for an additional fee.",
+    },
+  ];
 
   const [activeId, setActiveId] = useState("btn1");
 
   const activeService = services.find((service) => service.id === activeId);
- 
-
-
-
 
   return (
-    <section id='faq'>
+    <section id="faq">
       <div className="bg-[#fffbeb] p-5">
         <div className="text-center leading-relaxed pt-10">
           <div className="bg-white w-fit mx-auto rounded-4xl px-2 py-1 bg-">
@@ -114,6 +110,6 @@ const services = [
       </div>
     </section>
   );
-}
+};
 
-export default Faq
+export default Faq;

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import studioImg from "../assets/black and white photography.webp"
+import { motion } from "framer-motion";
+import studioImg from "../assets/black and white photography.webp";
 import MainRightImage from "../assets/Hero-image14.jpg";
 import BottomLeftImage from "../assets/Hero-image3.webp";
-import { LuCamera } from 'react-icons/lu';
+import { LuCamera } from "react-icons/lu";
 
 const DynamicImageSlider = () => {
   const images = [studioImg, MainRightImage, BottomLeftImage];
@@ -20,13 +21,18 @@ const DynamicImageSlider = () => {
   }, []);
 
   return (
-    <div className="group h-80 w-[95%] rounded-4xl overflow-hidden relative m-auto">
+    <motion.div
+      className="group h-80 w-[95%] rounded-4xl overflow-hidden relative m-auto"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
       {/* Zooming Image */}
       <div
         className={`absolute inset-0 bg-center bg-cover 
                        transition-transform duration-700 ease-out
                        group-hover:scale-110`}
-                       
         style={{
           backgroundImage: `linear-gradient(
                 rgba(0,0,0,0.5),
@@ -36,7 +42,13 @@ const DynamicImageSlider = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 p-10">
+      <motion.div
+        className="relative z-10 p-10"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <LuCamera className="w-10 h-10 text-amber-500 inline-flex " />
         <h3 className="inline-flex mx-5 text-white">FEATURED</h3>
 
@@ -47,12 +59,9 @@ const DynamicImageSlider = () => {
         <p className="text-gray-300 text-md text-relaxed mt-5">
           Dynamic showcase of professional photography work
         </p>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
-}
+};
 
-
-
-
-export default DynamicImageSlider
+export default DynamicImageSlider;

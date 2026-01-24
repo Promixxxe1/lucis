@@ -2,15 +2,35 @@ import potraitImg from "../assets/black and white photography.webp";
 import eventImg from "../assets/img1.webp";
 import weddingImg from "../assets/Hero-image3.webp";
 import studioImg from "../assets/Hero-image.jpeg";
+import { motion } from "framer-motion";
 
 const HowItWorks = () => {
   return (
     <div className="pt-20">
-      <h1 className="text-center text-5xl lg:text-6xl md:text-6xl sm:text-5xl font-serif pb-10 animate-in slide-in-from-right duration-2000">
+      <motion.h1
+        className="text-center text-5xl lg:text-6xl md:text-6xl sm:text-5xl font-serif pb-10"
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         How It <span className="text-[#c4a35a]">Works</span>
-      </h1>
-      <div className="grid lg:grid-cols-2 rounded-4xl gap-5 p-10 sm:grid-cols-1 md:grid-cols-2">
-        <div className="group h-80 w-full rounded-4xl overflow-hidden relative">
+      </motion.h1>
+      <motion.div
+        className="grid lg:grid-cols-2 rounded-4xl gap-5 p-10 sm:grid-cols-1 md:grid-cols-2"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <motion.div
+          className="group h-80 w-full rounded-4xl overflow-hidden relative"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
+          whileHover={{ scale: 1.05 }}
+        >
           {/* Zooming Image */}
           <div
             className="absolute inset-0 bg-center bg-cover 
@@ -38,8 +58,15 @@ const HowItWorks = () => {
               Explore our curated network of professional photographers
             </p>
           </div>
-        </div>
-        <div className="group h-80 w-full rounded-4xl overflow-hidden relative">
+        </motion.div>
+        <motion.div
+          className="group h-80 w-full rounded-4xl overflow-hidden relative"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          whileHover={{ scale: 1.05 }}
+        >
           {/* Zooming Image */}
           <div
             className="absolute inset-0 bg-center bg-cover 
@@ -67,8 +94,15 @@ const HowItWorks = () => {
               Schedule your session and discuss your vision
             </p>
           </div>
-        </div>
-        <div className="group h-80 w-full rounded-4xl overflow-hidden relative">
+        </motion.div>
+        <motion.div
+          className="group h-80 w-full rounded-4xl overflow-hidden relative"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, margin: "-100px" }}
+          whileHover={{ scale: 1.05 }}
+        >
           {/* Zooming Image */}
           <div
             className="absolute inset-0 bg-center bg-cover 
@@ -96,9 +130,16 @@ const HowItWorks = () => {
               Professional photography session with artistic precision
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="group h-80 w-full rounded-4xl overflow-hidden relative">
+        <motion.div
+          className="group h-80 w-full rounded-4xl overflow-hidden relative"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true, margin: "-100px" }}
+          whileHover={{ scale: 1.05 }}
+        >
           {/* Zooming Image */}
           <div
             className="absolute inset-0 bg-center bg-cover 
@@ -126,10 +167,10 @@ const HowItWorks = () => {
               Get your edited photos delivered to your gallery
             </p>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
-}
+};
 
-export default HowItWorks
+export default HowItWorks;

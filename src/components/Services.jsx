@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import potraitImg from "../assets/img2.jpg";
 import eventImg from "../assets/img1.webp";
 import weddingImg from "../assets/img4.jpg";
@@ -69,27 +70,57 @@ export default function Services() {
   return (
     <section id="services">
       <div className="bg-amber-50 pb-15">
-        <div className="text-center leading-relaxed animate-in slide-in-from-right duration-5000">
-          <h2 className="font-semibold text-[#666666] text-xs font-sans pt-30 tracking-widest">
+        <motion.div 
+          className="text-center leading-relaxed"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <motion.h2 
+            className="font-semibold text-[#666666] text-xs font-sans pt-30 tracking-widest"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             OUR SERVICES
-          </h2>
-          <h1 className="text-4xl lg:text-7xl md:text-6xl sm:text-5xl font-serif py-8 animate-in slide-in-from-left duration-5000">
+          </motion.h2>
+          <motion.h1 
+            className="text-4xl lg:text-7xl md:text-6xl sm:text-5xl font-serif py-8"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             Photography{" "}
             <span className="text-[#c4a35a] text-4xl lg:text-7xl md:text-6xl sm:text-5xl font-serif">
               Services
             </span>
-          </h1>
-          <p className="text-md font-light-7xl text-[#565656] lg:text-2xl md:text-xl sm:text-md">
+          </motion.h1>
+          <motion.p 
+            className="text-md font-light-7xl text-[#565656] lg:text-2xl md:text-xl sm:text-md"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             Professional photography for every occasion
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         <div className="min-h-screen px-6 py-8">
           <div className="mx-auto max-w-7xl">
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
               {/* LEFT SIDEBAR */}
-              <div className="space-y-4 lg:col-span-3">
-                {services.map((service) => (
-                  <div
+              <motion.div 
+                className="space-y-4 lg:col-span-3"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true, margin: "-100px" }}
+              >
+                {services.map((service, index) => (
+                  <motion.div
                     key={service.id}
                     onClick={() => setActiveId(service.id)}
                     className={`flex cursor-pointer items-center gap-4 rounded-xl p-4 transition
@@ -98,6 +129,11 @@ export default function Services() {
                       ? "border-2 border-yellow-500 bg-yellow-50"
                       : "bg-white shadow-2xl hover:bg-gray-50"
                   }`}
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    whileHover={{ scale: 1.05 }}
                   >
                     <div
                       className={`flex h-12 w-12 items-center justify-center rounded-lg text-lg
@@ -114,12 +150,18 @@ export default function Services() {
                         {service.description}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
 
               {/* CENTER IMAGE */}
-              <div className="lg:col-span-5">
+              <motion.div 
+                className="lg:col-span-5"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true, margin: "-100px" }}
+              >
                 <div className="relative overflow-hidden rounded-2xl">
                   <img
                     src={activeService.image}
@@ -131,10 +173,16 @@ export default function Services() {
                     {activeService.price}
                   </span>
                 </div>
-              </div>
+              </motion.div>
 
               {/* RIGHT DETAILS */}
-              <div className="lg:col-span-4 rounded-2xl p-6">
+              <motion.div 
+                className="lg:col-span-4 rounded-2xl p-6"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true, margin: "-100px" }}
+              >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-yellow-100">
                   {activeService.icon}
                 </div>
@@ -188,7 +236,7 @@ export default function Services() {
                     <LuArrowRight className="inline ml-2 hover:scale-x-100" />
                   </div>
                 </button>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

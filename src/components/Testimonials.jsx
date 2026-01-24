@@ -1,37 +1,70 @@
-import React from 'react'
-import { LuQuote, LuStar } from 'react-icons/lu';
+import React from "react";
+import { motion } from "framer-motion";
+import { LuQuote, LuStar } from "react-icons/lu";
 import testimonialImage from "../assets/Hero-image12.jpg";
 import testimonialImage2 from "../assets/Hero-image.jpeg";
 import testimonialImage3 from "../assets/img1.webp";
 
-
 const Testimonials = () => {
-
-
-
-
   return (
-    <section id='test'>
+    <section id="test">
       <div className="pb-20">
-        <div className="text-center leading-relaxed ">
-          <h2 className="font-semibold text-[#666666] text-xs font-sans pt-30 tracking-widest">
+        <motion.div
+          className="text-center leading-relaxed"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <motion.h2
+            className="font-semibold text-[#666666] text-xs font-sans pt-30 tracking-widest"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             CLIENT STORIES
-          </h2>
-          <h1 className="text-4xl lg:text-7xl md:text-6xl sm:text-5xl font-serif py-8 font-light">
+          </motion.h2>
+          <motion.h1
+            className="text-4xl lg:text-7xl md:text-6xl sm:text-5xl font-serif py-8 font-light"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             Capturing{" "}
             <em>
               <span className="text-[#c4a35a] text-4xl lg:text-7xl md:text-6xl sm:text-5xl font-serif">
                 Memories
               </span>
             </em>
-          </h1>
-          <p className="lg:text-2xl md:text-xl sm:text-md text-md font-light text-[#565656] mb-20">
+          </motion.h1>
+          <motion.p
+            className="lg:text-2xl md:text-xl sm:text-md text-md font-light text-[#565656] mb-20"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             Stories from our clients who found their perfect photographer
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 p-10 gap-x-25 gap-y-10">
-          <div className="bg-white shadow-4xl border border-[#d4d4d4] w-fit rounded-2xl">
+        <motion.div
+          className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 p-10 gap-x-25 gap-y-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <motion.div
+            className="bg-white shadow-4xl border border-[#d4d4d4] w-fit rounded-2xl"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+            whileHover={{ scale: 1.05 }}
+          >
             <img
               src={testimonialImage}
               className="w-full h-90 object-cover rounded-t-2xl"
@@ -56,9 +89,16 @@ const Testimonials = () => {
               <h6 className="text-xl font-semibold">Sarah & Michael Chen</h6>
               <p className="font-light text-sm">Wedding • Napa Valley, CA</p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="bg-white shadow-4xl border border-[#d4d4d4] w-fit rounded-2xl">
+          <motion.div
+            className="bg-white shadow-4xl border border-[#d4d4d4] w-fit rounded-2xl"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            whileHover={{ scale: 1.05 }}
+          >
             <img
               src={testimonialImage2}
               className="w-full h-90 object-cover rounded-t-2xl"
@@ -82,9 +122,16 @@ const Testimonials = () => {
               <h6 className="text-xl font-semibold">Jessica Williams</h6>
               <p className="font-light text-sm">Portrait Session</p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="bg-white shadow-4xl border border-[#d4d4d4] w-fit rounded-2xl">
+          <motion.div
+            className="bg-white shadow-4xl border border-[#d4d4d4] w-fit rounded-2xl"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true, margin: "-100px" }}
+            whileHover={{ scale: 1.05 }}
+          >
             <img
               src={testimonialImage3}
               className="w-full h-90 object-cover rounded-t-2xl"
@@ -108,14 +155,21 @@ const Testimonials = () => {
               <h6 className="text-xl font-semibold">Emily & Jamess</h6>
               <p className="font-light text-sm">Engagement</p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="bg-amber-50 shadow-4xl border border-[#d4d4d4] w-fit rounded-2xl justify-center items-center p-10 h-100">
+          <motion.div
+            className="bg-amber-50 shadow-4xl border border-[#d4d4d4] w-fit rounded-2xl justify-center items-center p-10 h-100"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true, margin: "-100px" }}
+            whileHover={{ scale: 1.05 }}
+          >
             <LuQuote className="w-10 h-10 text-gray-300 text-center" />
             <h1 className="font-semibold text-xl"> Your Story Next</h1>
             <p className="text-lg">Join hundreds of satisfied clients</p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         <div className=" grid justify-between p-10 md: grid-cols-2 lg:grid-cols-4 text-center gap-y-10 leading-relaxed">
           <span className="p-1 animate-bounce duration-1000 delay-100">
@@ -140,6 +194,6 @@ const Testimonials = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Testimonials
+export default Testimonials;
